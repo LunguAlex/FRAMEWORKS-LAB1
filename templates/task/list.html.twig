@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<ul>
+    {% for task in tasks %}
+        <li>
+            <div>
+                <a href="{{ path('app_task_view', { id: task.id }) }}">{{ task.name }}</a>
+                <a href="{{ path('app_task_update', { id: task.id }) }}" class="btn btn-primary">Изменить</a>
+                <a href="{{ path('app_task_delete',{id: task.id})}}" class="btn btn-primary">Удалить</a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <p>Заголовок: {{task.name}}</p>
+        {% if task.description %}
+            <p>Описание: {{task.description}}</p>
+        {% endif %}
+        {% if task.result %}
+            <p>Результат: сделано</p>
+        {% else %}
+            <p>Результат: еще не сделано</p>
+        {% endif %}
+        <p>Date: {{task.date|date('Y-m-d')}}</p>
+        <a href="/task/" class="btn btn-primary">НАЗАД</a>
+    </div>
+{% endblock %}
